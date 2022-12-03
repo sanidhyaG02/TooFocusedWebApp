@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const app = express();
+const mongoose = require('mongoose');
 
 //Middleware Dependencies
 app.use(morgan('dev'));
@@ -20,6 +21,10 @@ app.use((req, res, next)=>{
 });
 
 const userRoutes = require('./api/routes/user');
+
+mongoose.connect(
+    'mongodb+srv://HackathonFILgroup:'+process.env.MongoAtlasPW +'@toofocuseddb.hwuzyar.mongodb.net/?retryWrites=true&w=majority'
+);
 
 app.use('/users', userRoutes);
 
