@@ -1,6 +1,6 @@
 import React from "react";
-import Fields from "./Components/Fields";
-import Navbar from './Components/Navbar/userFormNavbar';
+import Fields from "../Components/Fields";
+import Navbar from '../Components/Navbar/userFormNavbar';
 import { Link } from "react-router-dom";
 
 function Login(){

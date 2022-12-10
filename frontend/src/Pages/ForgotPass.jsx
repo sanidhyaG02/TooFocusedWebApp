@@ -1,9 +1,9 @@
 import React from "react";
-import Fields from "./Components/Fields";
-import Navbar from './Components/Navbar/userFormNavbar';
+import Fields from "../Components/Fields";
+import Navbar from '../Components/Navbar/userFormNavbar';
 import { Link } from "react-router-dom";
 
-function Register(){
+function ForgetPass(){
     return (
         <div>
             <Navbar/>
@@ -13,19 +13,15 @@ function Register(){
                         <img src="./images/image-hero-cropped.png" alt="" className="img-fluid h-50 mt-5"/>
                     </div>
                     <div className="col-md-7 col-lg-6">
-                        <h1 className="text-center mb-3">Register Here!</h1>
+                        <h1 className="text-center mb-3">Forgot Password?</h1>
+                        <h6 className="text-center text-muted mb-3">Enter the email address associated with your account to reset your password</h6>
                         <form>
                             <div className="row mx-5">
-                                
-                                <Fields iconName="person" type="text" idName="name" placeholder="Name"/>
-                                <Fields iconName="person" type="text" idName="userName" placeholder="User Name"/>
                                 <Fields iconName="email" type="email" idName="email" placeholder="Email"/>
-                                <Fields iconName="lock" type="password" idName="password" placeholder="Password"/>
-                                <Fields iconName="lock" type="password" idName="confirmPassword" placeholder="Confirm Password"/>
                             </div>
                             <div className="text-center mt-1">
-                                <button type="submit" className="btn btn-primary">Register Now</button>
-                                <p className="text-muted">Already a user? <Link to="/login">Login</Link></p>
+                                <button type="submit" className="btn btn-primary">Confirm</button>
+                                <p className="text-muted">Not a Member yet? <Link to="/register">Register Now!</Link></p>
                             </div>
                         </form>
                     </div>
@@ -35,4 +31,4 @@ function Register(){
     );
 }
 
-export default Register;
+export default ForgetPass;

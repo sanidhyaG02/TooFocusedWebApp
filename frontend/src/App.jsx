@@ -1,7 +1,8 @@
-import './App.css';
-import Register from './Register';
-import Login from './Login';
-import ForgetPass from './ForgotPass';
+import './CSS/App.css';
+import Register from './Pages/Register';
+import Login from './Pages/Login';
+import ForgetPass from './Pages/ForgotPass';
+import Home from './Pages/Home';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
                     <Route path="/login" element={ <Login /> } />
                     <Route path="/register" element={ <Register /> } />
                     <Route path="/forget-password" element={ <ForgetPass /> } />
+                    <Route path="/home" element={ <Home /> } />
                 </Routes >
             </div>
         </Router>
