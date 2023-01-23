@@ -1,9 +1,10 @@
 import React from "react";
 import Fields from "../Components/Fields";
 import Navbar from '../Components/Navbar/userFormNavbar';
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 
 function Login(){
+    const navigate = useNavigate();
     return (
         <div>
             <Navbar/>
@@ -20,7 +21,9 @@ function Login(){
                                 <Fields iconName="lock" type="password" idName="password" placeholder="Password"/>
                             </div>
                             <div className="text-center mt-1">
-                                <button type="submit" className="btn btn-primary">LogIn</button>
+                                <button type="submit" className="btn btn-primary" onClick={()=>{
+                                    navigate('/home');
+                                }}>LogIn</button>
                                 <p className="text-muted mb-1 mt-3">Not a Member yet? <Link to="/register">Register Now!</Link></p>
                                 <Link className="my-auto" to="/forget-password">Forgotten Password?</Link>
                             </div>
