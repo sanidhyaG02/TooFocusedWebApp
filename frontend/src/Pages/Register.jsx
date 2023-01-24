@@ -86,7 +86,7 @@ function Register() {
                     })
                     .catch(err => {
                         setError("User name already exists");
-                      console.log("andar wala ")
+                    
                     });
             }
             else {
