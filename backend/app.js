@@ -21,12 +21,15 @@ app.use((req, res, next)=>{
 });
 
 const userRoutes = require('./api/routes/user');
+const tasksRoutes = require('./api/routes/tasks');
+
 
 mongoose.connect(
     'mongodb+srv://HackathonFILgroup:3czWIjO9QXPI64tL@toofocuseddb.hwuzyar.mongodb.net/?retryWrites=true&w=majority'
 );
 
 app.use('/users', userRoutes);
+app.use('/tasks',tasksRoutes);
 
 //ERROR Handling
 app.use((req, res, next)=>{

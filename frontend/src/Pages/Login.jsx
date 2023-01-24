@@ -2,25 +2,8 @@ import React, { useState } from "react";
 import Fields from "../Components/Fields";
 import Navbar from '../Components/Navbar/userFormNavbar';
 import { Link } from "react-router-dom";
-import axios from 'axios';
+
 function Login(){
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-    const handleSubmit = e => {
-        e.preventDefault();
-        axios.post(`http://localhost:8000/users/login?userName=${username}&password=${password}`)
-                    .then(res => {
-                        sessionStorage.setItem('user', username);  
-                        setError("");
-           
-                                      
-                    })
-                    .catch(err => {
-                        setError("Please Enter Valid Username and Password");
-                      console.log("Failed")
-                    });
-    }
     return (
         <div>
             <Navbar/>
@@ -38,7 +21,7 @@ function Login(){
                                 {error && <span style={{ color: 'red' }}>{error}</span>}
                             </div>
                             <div className="text-center mt-1">
-                                <button type="submit" className="btn btn-primary" onClick={handleSubmit}>LogIn</button>
+                                <button type="submit" className="btn btn-primary">LogIn</button>
                                 <p className="text-muted mb-1 mt-3">Not a Member yet? <Link to="/register">Register Now!</Link></p>
                                 <Link className="my-auto" to="/forget-password">Forgotten Password?</Link>
                             </div>
