@@ -23,7 +23,7 @@ app.use((req, res, next)=>{
 const userRoutes = require('./api/routes/user');
 
 mongoose.connect(
-    'mongodb+srv://HackathonFILgroup:'+process.env.MongoAtlasPW +'@toofocuseddb.hwuzyar.mongodb.net/?retryWrites=true&w=majority'
+    'mongodb+srv://HackathonFILgroup:3czWIjO9QXPI64tL@toofocuseddb.hwuzyar.mongodb.net/?retryWrites=true&w=majority'
 );
 
 app.use('/users', userRoutes);
