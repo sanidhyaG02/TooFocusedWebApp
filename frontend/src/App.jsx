@@ -3,8 +3,10 @@ import Register from './Pages/Register';
 import Login from './Pages/Login';
 import ForgetPass from './Pages/ForgotPass';
 import Home from './Pages/Home';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Profile from './Pages/Profile';
+import NotFoundError from './Pages/NotFoundError';
+import { BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
+
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
                     <Route path="/forget-password" element={ <ForgetPass /> } />
                     <Route path="/home" element={ <Home /> } />
                     <Route path="/profile" element={<Profile/>}/>
+                    <Route path="/404" element={<NotFoundError/>} />
+                    <Route path="*" element={<Navigate to ="/404" />}/>
                 </Routes >
             </div>
         </Router>
